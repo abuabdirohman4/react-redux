@@ -1,3 +1,7 @@
+# Reference
+
+[React JS Hooks Redux : 1. Pengenalan & Instalasi Redux](https://www.youtube.com/watch?v=NBY70QmxSUE&ab_channel=WahidevAcademy).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
