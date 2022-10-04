@@ -1,9 +1,18 @@
-import React from 'react';
+import React from "react";
+import AddProduct from "./components/AddProduct";
+import { ShowProduct } from "./components/ShowProduct";
 
 function App() {
   return (
-    <div className='container'>
-      <h1>Hello World</h1>
+    <div className="container">
+      <div className="columns">
+        <div className="column">
+          <AddProduct />
+        </div>
+        <div className="column">
+          <ShowProduct />
+        </div>
+      </div>
     </div>
   );
 }
