@@ -13,14 +13,22 @@ export const getProducts = createAsyncThunk(
   }
 );
 
-export const saveProducts = createAsyncThunk(
-  "products/saveProducts",
+export const saveProduct = createAsyncThunk(
+  "products/saveProduct",
   async ({ title, price }) => {
     const response = await axios.post("http://localhost:5000/products", {
       title,
       price,
     });
     return response.data;
+  }
+);
+
+export const deleteProduct = createAsyncThunk(
+  "products/deleteProduct",
+  async (id) => {
+    await axios.delete(`http://localhost:5000/products/${id}`);
+    return id;
   }
 );
 
@@ -35,8 +43,11 @@ const productSlice = createSlice({
     [getProducts.fulfilled]: (state, action) => {
       productEntity.setAll(state, action.payload);
     },
-    [saveProducts.fulfilled]: (state, action) => {
+    [saveProduct.fulfilled]: (state, action) => {
       productEntity.addOne(state, action.payload);
+    },
+    [deleteProduct.fulfilled]: (state, action) => {
+      productEntity.removeOne(state, action.payload);
     },
   },
 });

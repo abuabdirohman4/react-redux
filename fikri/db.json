@@ -24,11 +24,6 @@
       "id": 5,
       "title": "Product 5",
       "price": 500
-    },
-    {
-      "title": "Product 6",
-      "price": "600",
-      "id": 6
     }
   ]
 }

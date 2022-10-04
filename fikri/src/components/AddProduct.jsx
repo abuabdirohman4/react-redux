@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { saveProducts } from "../features/productSlice";
+import { saveProduct } from "../features/productSlice";
 
 const AddProduct = () => {
   const [title, setTitle] = useState("");
@@ -11,7 +11,7 @@ const AddProduct = () => {
 
   const createProduct = async (e) => {
     e.preventDefault();
-    await dispatch(saveProducts({ title, price }));
+    await dispatch(saveProduct({ title, price }));
     navigate("/");
   };
 
