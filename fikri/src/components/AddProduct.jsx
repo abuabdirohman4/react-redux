@@ -1,20 +1,12 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { update } from "../features/productSlice";
 
 const AddProduct = () => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
-  const dispatch = useDispatch();
-
-  const updateProduct = (e) => {
-    e.preventDefault();
-    dispatch(update({ title, price }));
-  };
 
   return (
     <div>
-      <form onSubmit={updateProduct} className="box mt-5">
+      <form onSubmit="" className="box mt-5">
         <div className="field">
           <label htmlFor="" className="label">
             Title
