@@ -1,18 +1,21 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getProducts, productSelectors } from "../features/productSlice";
+import { Link } from "react-router-dom";
 
 export const ShowProduct = () => {
   const dispatch = useDispatch();
   const products = useSelector(productSelectors.selectAll);
 
   useEffect(() => {
-    // console.log(getProducts());
     dispatch(getProducts());
   }, [dispatch]);
 
   return (
     <div className="box mt-5">
+      <Link to="add" className="button is-success">
+        Add New
+      </Link>
       <table className="table is-striped is-fullwidth">
         <thead>
           <tr>
@@ -29,7 +32,12 @@ export const ShowProduct = () => {
               <td>{product.title}</td>
               <td>{product.price}</td>
               <td>
-                <button className="button is-info is-small">Edit</button>
+                <Link
+                  to={`edit/${product.id}1`}
+                  className="button is-info is-small"
+                >
+                  Edit
+                </Link>
                 <button className="button is-danger is-small">Delete</button>
               </td>
             </tr>

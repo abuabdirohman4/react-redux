@@ -9,7 +9,17 @@ export const getProducts = createAsyncThunk(
   "products/getProducts",
   async () => {
     const response = await axios.get("http://localhost:5000/products");
-    console.log(response)
+    return response.data;
+  }
+);
+
+export const saveProducts = createAsyncThunk(
+  "products/saveProducts",
+  async ({ title, price }) => {
+    const response = await axios.post("http://localhost:5000/products", {
+      title,
+      price,
+    });
     return response.data;
   }
 );
@@ -24,6 +34,9 @@ const productSlice = createSlice({
   extraReducers: {
     [getProducts.fulfilled]: (state, action) => {
       productEntity.setAll(state, action.payload);
+    },
+    [saveProducts.fulfilled]: (state, action) => {
+      productEntity.addOne(state, action.payload);
     },
   },
 });
