@@ -22,8 +22,8 @@
     },
     {
       "id": 5,
-      "title": "Product 5",
-      "price": 500
+      "title": "Product Updated",
+      "price": "700"
     }
   ]
 }

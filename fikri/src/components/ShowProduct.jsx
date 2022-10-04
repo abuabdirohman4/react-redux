@@ -33,7 +33,7 @@ export const ShowProduct = () => {
               <td>{product.price}</td>
               <td>
                 <Link
-                  to={`edit/${product.id}1`}
+                  to={`edit/${product.id}`}
                   className="button is-info is-small"
                 >
                   Edit
