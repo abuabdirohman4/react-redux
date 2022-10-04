@@ -5,11 +5,11 @@ import { update } from "../features/productSlice";
 const AddProduct = () => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const updateProduct = (e) => {
     e.preventDefault();
-    dispatch(update({title, price}))
+    dispatch(update({ title, price }));
   };
 
   return (
